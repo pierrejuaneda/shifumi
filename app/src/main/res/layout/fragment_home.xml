@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:padding="16dp"
-        android:text="@string/home_play"
+        android:text="@string/play_match"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

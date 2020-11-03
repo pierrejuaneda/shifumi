@@ -10,7 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A simple home [Fragment].
  */
 class HomeFragment : Fragment() {
 
