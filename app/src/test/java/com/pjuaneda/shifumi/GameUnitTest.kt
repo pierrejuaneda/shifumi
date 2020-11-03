@@ -1,5 +1,8 @@
 package com.pjuaneda.shifumi
 
+import com.pjuaneda.shifumi.models.Choice
+import com.pjuaneda.shifumi.models.Player
+import com.pjuaneda.shifumi.models.match
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -71,8 +74,8 @@ class GameUnitTest {
     @Test
     // Tests if a tie does not increment anyone score
     fun testTieDoesNotIncrementScore() {
-        first.chooseHand(Choice.PAPER)
-        second.chooseHand(Choice.PAPER)
+        first.choose(Choice.PAPER)
+        second.choose(Choice.PAPER)
 
         // Checking if Scores were initialised to 0
         Assert.assertEquals(first.score, 0)
