@@ -4,7 +4,10 @@
     <string name="home_fragment_label">Home Fragment</string>
     <string name="game_fragment_label">Game Fragment</string>
 
+    <string name="home_icon_content">Image de header du shifumi</string>
+
     <string name="play_match">Jouer contre l\'ordinateur</string>
+    <string name="computer_match">Ordinateur contre l\'ordinateur</string>
 
     <string name="game_scores">Scores</string>
     <string name="game_toolbar_back_content">Retour à l\'accueil</string>
@@ -14,4 +17,5 @@
     <string name="game_actions_rock_content">Jouer la pierre</string>
     <string name="game_actions_paper_content">Jouer la feuille</string>
     <string name="game_actions_scissors_content">Jouer le ciseau</string>
+    <string name="game_computer_match">Lancer un match</string>
 </resources>

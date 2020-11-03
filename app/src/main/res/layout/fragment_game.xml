@@ -62,7 +62,7 @@
         android:padding="16dp"
         android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintBottom_toTopOf="@id/game_scores_player_title"
+        app:layout_constraintBottom_toTopOf="@id/game_scores_first_title"
         app:layout_constraintTop_toBottomOf="@id/game_scores_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/game_score_second"
@@ -80,16 +80,15 @@
         android:padding="16dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/game_scores_title"
-        app:layout_constraintBottom_toTopOf="@id/game_scores_opponent_title"
+        app:layout_constraintBottom_toTopOf="@id/game_scores_second_title"
         app:layout_constraintStart_toEndOf="@id/game_score_first"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="0"/>
 
     <TextView
-        android:id="@+id/game_scores_player_title"
+        android:id="@+id/game_scores_first_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/game_player"
         android:gravity="center"
         android:padding="8dp"
         android:layout_marginStart="4dp"
@@ -99,10 +98,10 @@
         app:layout_constraintTop_toBottomOf="@id/game_score_first"
         app:layout_constraintBottom_toTopOf="@id/game_score_guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/game_scores_opponent_title"/>
+        app:layout_constraintEnd_toStartOf="@id/game_scores_second_title"/>
 
     <TextView
-        android:id="@+id/game_scores_opponent_title"
+        android:id="@+id/game_scores_second_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/game_computer"
@@ -114,7 +113,7 @@
         android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintTop_toBottomOf="@id/game_score_second"
         app:layout_constraintBottom_toTopOf="@id/game_score_guideline"
-        app:layout_constraintStart_toEndOf="@id/game_scores_player_title"
+        app:layout_constraintStart_toEndOf="@id/game_scores_first_title"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -170,6 +169,7 @@
         android:layout_margin="4dp"
         android:backgroundTint="@color/design_default_color_primary"
         android:padding="8dp"
+        android:visibility="gone"
         android:src="@drawable/ic_rock"
         android:contentDescription="@string/game_actions_rock_content"
         app:layout_constraintTop_toBottomOf="@id/game_actions_title"
@@ -184,6 +184,7 @@
         android:layout_margin="4dp"
         android:backgroundTint="@color/design_default_color_primary"
         android:padding="8dp"
+        android:visibility="gone"
         android:contentDescription="@string/game_actions_paper_content"
         android:src="@drawable/ic_paper"
         app:layout_constraintTop_toBottomOf="@id/game_actions_title"
@@ -198,6 +199,7 @@
         android:layout_margin="4dp"
         android:backgroundTint="@color/design_default_color_primary"
         android:padding="8dp"
+        android:visibility="gone"
         android:contentDescription="@string/game_actions_scissors_content"
         android:src="@drawable/ic_scissors"
         app:layout_constraintTop_toBottomOf="@id/game_actions_title"
@@ -205,4 +207,15 @@
         app:layout_constraintStart_toEndOf="@id/game_play_paper"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+
+    <Button
+        android:id="@+id/game_play_computer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        android:text="@string/game_computer_match"
+        android:backgroundTint="@color/design_default_color_primary"
+        app:layout_constraintTop_toBottomOf="@id/game_actions_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,8 +26,13 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.home_play_human).setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_game)
+            val bundle = bundleOf("isPlayer" to true)
+            findNavController().navigate(R.id.action_home_to_game, bundle)
         }
 
+        view.findViewById<Button>(R.id.home_play_computer).setOnClickListener {
+            val bundle = bundleOf("isPlayer" to false)
+            findNavController().navigate(R.id.action_home_to_game, bundle)
+        }
     }
 }
