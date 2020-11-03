@@ -34,8 +34,10 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         addObservers()
+
         view.findViewById<ImageButton>(R.id.game_toolbar_go_back).setOnClickListener {
             findNavController().navigate(R.id.action_game_back_to_home)
+            findNavController().popBackStack()
         }
 
         view.findViewById<ImageButton>(R.id.game_play_rock).setOnClickListener {
