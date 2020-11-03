@@ -40,8 +40,7 @@ class GameFragment : Fragment() {
             view.findViewById<ImageButton>(R.id.game_play_paper).visibility = if(it) View.VISIBLE else View.GONE
             view.findViewById<ImageButton>(R.id.game_play_scissors).visibility = if(it) View.VISIBLE else View.GONE
             view.findViewById<Button>(R.id.game_play_computer).visibility = if(it) View.GONE else View.VISIBLE
-            view.findViewById<Button>(R.id.game_actions_title).visibility = if(it) View.VISIBLE else View.GONE
-
+            view.findViewById<TextView>(R.id.game_actions_title).visibility = if(it) View.VISIBLE else View.GONE
             view.findViewById<TextView>(R.id.game_scores_first_title).text = if(it) getString(R.string.game_player) else getText(R.string.game_computer)
         }
 
