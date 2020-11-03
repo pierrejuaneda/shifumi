@@ -71,8 +71,8 @@ class GameUnitTest {
     @Test
     // Tests if a tie does not increment anyone score
     fun testTieDoesNotIncrementScore() {
-        first.chooseHand(Hand.PAPER)
-        second.chooseHand(Hand.PAPER)
+        first.chooseHand(Choice.PAPER)
+        second.chooseHand(Choice.PAPER)
 
         // Checking if Scores were initialised to 0
         Assert.assertEquals(first.score, 0)
