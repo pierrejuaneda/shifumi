@@ -13,6 +13,7 @@ class GameUnitTest {
     lateinit var second: Player
 
     @Before
+    // Initialize two players
     internal fun setUp() {
         first = Player()
         second = Player()

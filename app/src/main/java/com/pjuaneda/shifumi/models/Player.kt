@@ -1,16 +1,18 @@
 package com.pjuaneda.shifumi.models
 
 data class Player (var choice: Choice? = null, var score: Int = 0) {
+    // Set a choice to a player
     fun choose(choice: Choice){
         this.choice = choice
     }
 
+    // Increment score by one
     fun incrementScore(){
         this.score += 1
     }
 }
 
-
+// Matching a player against another, increase the score of the winner if there's one and return it
 fun Player.match(opponent: Player): Player?{
     val winner = when(this.choice){
         Choice.PAPER ->
@@ -40,6 +42,7 @@ fun Player.match(opponent: Player): Player?{
         }
         null -> null
     }
+    // Increment score
     winner?.incrementScore()
     return winner
 }

@@ -10,20 +10,24 @@ class GameViewModel : ViewModel(){
 
     val first = MutableLiveData<Player>()
     val second = MutableLiveData<Player>()
-    val winner = MutableLiveData<Player>()
 
     init {
         first.postValue(Player())
         second.postValue(Player())
     }
 
+    // Play a match against a computer with a defined Choice
     fun play(choice: Choice){
+        // Set Choices
         val firstPlayer = first.value ?: Player()
         val secondPlayer = second.value ?: Player()
         firstPlayer.choose(choice)
         secondPlayer.choose(Choice.randomValue())
-        val win = firstPlayer.match(secondPlayer)
-        winner.postValue(win)
+
+        // Matching
+        firstPlayer.match(secondPlayer)
+
+        // Post Values to update UI
         first.postValue(firstPlayer)
         second.postValue(secondPlayer)
     }

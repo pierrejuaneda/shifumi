@@ -35,6 +35,7 @@ class GameFragment : Fragment() {
 
         addObservers()
 
+        // Check if we are currently playing (isPlayer = true) or if we play computer against computer
         arguments?.getBoolean("isPlayer")?.let {
             view.findViewById<ImageButton>(R.id.game_play_rock).visibility = if(it) View.VISIBLE else View.GONE
             view.findViewById<ImageButton>(R.id.game_play_paper).visibility = if(it) View.VISIBLE else View.GONE
@@ -44,18 +45,19 @@ class GameFragment : Fragment() {
             view.findViewById<TextView>(R.id.game_scores_first_title).text = if(it) getString(R.string.game_player) else getText(R.string.game_computer)
         }
 
+        // Navigate back when clicking back arrow
         view.findViewById<ImageButton>(R.id.game_toolbar_go_back).setOnClickListener {
             findNavController().navigate(R.id.action_game_back_to_home)
             findNavController().popBackStack()
         }
 
+        // Actions to play a defined choice :
         view.findViewById<ImageButton>(R.id.game_play_rock).setOnClickListener {
             gameVM.play(Choice.ROCK)
         }
         view.findViewById<ImageButton>(R.id.game_play_paper).setOnClickListener {
             gameVM.play(Choice.PAPER)
         }
-
         view.findViewById<ImageButton>(R.id.game_play_scissors).setOnClickListener {
             gameVM.play(Choice.SCISSORS)
         }
@@ -64,6 +66,7 @@ class GameFragment : Fragment() {
         }
     }
 
+    // Observe the live data in View Model to update UI when Players are updated
     private fun addObservers() {
         gameVM.first.observe(viewLifecycleOwner, Observer<Player> {
             view?.findViewById<ImageView>(R.id.game_hand_first)?.setChoice(it.choice)
@@ -76,6 +79,7 @@ class GameFragment : Fragment() {
         })
     }
 
+    // Extension function to update the ImageView corresponding to the choice
     private fun ImageView.setChoice(choice: Choice?){
         when(choice){
             Choice.PAPER -> {
