@@ -15,7 +15,9 @@ Il suffit d'importer le projet sous android studio à l'aide de l'url suivante :
 ## Evolutions futures 
 
 Il serait possible de faire évoluer le projet en une version plus complexe en intégrant le lézard et Spock ou tout autre variante plus complexe du jeu.
+
 Une autre possibilité d'évolution serait de permettre à l'utilisateur de jouer contre un autre joueur, et de garder en mémoire les scores de ses parties passée.
+
 Enfin, l'interface étant simple, il serait aussi possible de l'améliorer pour rendre le jeu plus agréable et d'ajouter des animations pour dynamiser les parties.
 
 ## Tests
