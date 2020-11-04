@@ -12,6 +12,7 @@ import org.junit.Test
 class GameFragmentInstrumentedTest {
 
     @Test
+    // Test If all view in "Play versus computer" are visible
     fun testGameFragmentHumanIsDisplayed() {
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.home_play_human))
@@ -38,6 +39,7 @@ class GameFragmentInstrumentedTest {
     }
 
     @Test
+    // Test If all view in "computer versus computer" are visible
     fun testGameFragmentComputerIsDisplayed() {
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.home_play_computer))
@@ -63,6 +65,7 @@ class GameFragmentInstrumentedTest {
             .check(matches(isDisplayed()))
     }
     @Test
+    // Test if the rock image is set when playing rock
     fun testGameFragmentPlayRock() {
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.home_play_human))
@@ -75,6 +78,7 @@ class GameFragmentInstrumentedTest {
             .check(matches(withContentDescription(R.string.game_actions_rock_content)))
     }
     @Test
+    // Test if the paper image is set when playing rock
     fun testGameFragmentPlayPaper() {
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.home_play_human))
@@ -88,6 +92,7 @@ class GameFragmentInstrumentedTest {
     }
 
     @Test
+    // Test if the scissors image is set when playing rock
     fun testGameFragmentPlayScissors() {
         ActivityScenario.launch(MainActivity::class.java)
         onView(withId(R.id.home_play_human))
